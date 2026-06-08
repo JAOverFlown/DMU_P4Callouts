@@ -12,11 +12,13 @@ const BUTTONS = {
     },
 
     zh: {
-        output: "放置钢铁 出"
+        output: "放置钢铁 出",
+        output2: "钢铁"
     },
 
     jh: {
-        output: "放置月环 留"
+        output: "放置月环 留",
+        output2: "月环"
     },
 
     C: {},
@@ -24,11 +26,13 @@ const BUTTONS = {
     D: {},
 
     zs: {
-        output: "放置月环 留"
+        output: "放置月环 留",
+        output2: "钢铁外"
     },
 
     js: {
-        output: "放置钢铁 出"
+        output: "放置钢铁 出",
+        output2: "月环内"
     },
 
     E: {
@@ -41,10 +45,18 @@ const BUTTONS = {
         output3: "面对"
     },
 
-    zl: {},
-    jl: {},
-    zb: {},
-    jb: {},
+    zl: {
+        output: "真雷"
+    },
+    jl: {
+        output: "假雷"
+    },
+    zb: {
+        output: "真冰"
+    },
+    jb: {
+        output: "假冰"
+    },
     zl2: {},
     jl2: {},
     zb2: {},
@@ -105,36 +117,36 @@ function updateOutput() {
     const ice2 = getSelected("zb2", "jb2");
 
     if (zhjh) {
-        lines[2] = BUTTONS[zhjh].output;
+        lines[2] = "场中集合，" + BUTTONS[zhjh].output;
     }
 
     if (zsjs) {
-        lines[5] = BUTTONS[zsjs].output;
+        lines[5] = "场中集合，" + BUTTONS[zsjs].output;
     }
 
     if (selected["C"]) {
 
         if (ab) {
-            lines[0] = BUTTONS[ab].output;
-            lines[1] = BUTTONS[ab].output2;
+            lines[0] = "提前报动静剑 + " + BUTTONS[ab].output;
+            lines[1] = "C前集合，安全区," + BUTTONS[ab].output2;
         }
 
         if (ef) {
-            lines[3] = BUTTONS[ef].output;
-            lines[4] = BUTTONS[ef].output3;
+            lines[3] = "提前报动静剑 + " + BUTTONS[zsjs].output2 + "后" + BUTTONS[ef].output;
+            lines[4] = "C前集合，安全区," + BUTTONS[ef].output3;
         }
     }
 
     if (selected["D"]) {
 
         if (ab) {
-            lines[3] = BUTTONS[ab].output;
-            lines[1] = BUTTONS[ab].output2;
+            lines[3] = "提前报动静剑 + " + BUTTONS[ab].output;
+            lines[1] = "C前集合，安全区，" + BUTTONS[ab].output2;
         }
 
         if (ef) {
-            lines[0] = BUTTONS[ef].output;
-            lines[4] = BUTTONS[ef].output3;
+            lines[0] = "提前报动静剑 + " + BUTTONS[ef].output;
+            lines[4] = "C前集合，安全区，" +BUTTONS[ef].output3;
         }
     }
 
@@ -156,7 +168,7 @@ function updateOutput() {
     }
 
     if (lightningResult && iceResult) {
-        lines[6] = iceResult + lightningResult;
+        lines[6] =  BUTTONS[zsjs].output2 +" + "+ iceResult + lightningResult;
     }
 
     let text = "";
