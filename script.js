@@ -127,25 +127,25 @@ function updateOutput() {
     if (selected["C"]) {
 
         if (ab) {
-            lines[0] = "提前报动静剑 + " + BUTTONS[ab].output;
-            lines[1] = "C前集合，安全区," + BUTTONS[ab].output2;
+            lines[0] = "提前报动静剑 + " + BUTTONS[zsjs].output2 + "后" + BUTTONS[ab].output;
+            lines[1] = "C前集合，安全区，" + BUTTONS[ab].output2;
         }
 
         if (ef) {
             lines[3] = "提前报动静剑 + " + BUTTONS[zsjs].output2 + "后" + BUTTONS[ef].output;
-            lines[4] = "C前集合，安全区," + BUTTONS[ef].output3;
+            lines[4] = "C前集合，安全区，" + BUTTONS[ef].output3;
         }
     }
 
     if (selected["D"]) {
 
         if (ab) {
-            lines[3] = "提前报动静剑 + " + BUTTONS[ab].output;
+            lines[3] = "提前报动静剑 + " + BUTTONS[zsjs].output2 + "后" + BUTTONS[ab].output;
             lines[1] = "C前集合，安全区，" + BUTTONS[ab].output2;
         }
 
         if (ef) {
-            lines[0] = "提前报动静剑 + " + BUTTONS[ef].output;
+            lines[0] = "提前报动静剑 + " + BUTTONS[zsjs].output2 + "后" + BUTTONS[ef].output;
             lines[4] = "C前集合，安全区，" +BUTTONS[ef].output3;
         }
     }
